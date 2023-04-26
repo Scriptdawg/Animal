@@ -1,0 +1,14 @@
+<h1><%= pageTitle %></h1>
+<p>
+  To test database connectivity, these dogs are retrieved from a mongoDb cloud
+  database called animals and a collection of documents called dogs.
+</p>
+
+<h2>List of dogs:</h2>
+<ul>
+  <% dogs.forEach((dog) => { %>
+    <li><a href="dog/<%= dog.url %>"><%= dog.name %></a></li>
+  <% }); %>
+</ul>
+
+<p><a href="/animal/dog/create">Create New Dog</a></p>

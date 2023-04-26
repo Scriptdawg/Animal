@@ -1,0 +1,43 @@
+<h1><%= pageTitle %></h1>
+<p>
+  This is a <b>Node.js</b> server that uses <b>Mongoose</b>, <b>Express</b>, and
+  <b>Ejs</b>.<br />
+  It has a multi-level, modular, <b>MVC</b> (Model-View-Controller)
+  architecture.
+</p>
+
+<h2>package.json:</h2>
+<pre class="pre-font">
+{
+  "name": "animals",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Node.js | Animals
+    created April 17, 2023",
+  "scripts": {
+    "start": "node ./bin/www",
+    "devStart": "nodemon ./bin/www",
+    "serverStart":
+      "SET DEBUG=sdg:* & npm run devStart"
+  },
+  "author": "Paul Oosterhoff",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^3.2.4",
+    "cookie-parser": "^1.4.6",
+    "debug": "^4.3.4",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "express-ejs-layouts": "^2.5.1",
+    "express-validator": "^7.0.1",
+    "http-errors": "^2.0.0",
+    "mongoose": "^7.0.3",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.3",
+    "nodemon": "^2.0.22"
+  }
+}
+</pre>
