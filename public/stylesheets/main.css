@@ -54,7 +54,7 @@ a:hover {
 img {
   display: block;
   margin-inline: auto;
-  max-width: 90vw;
+  max-width: 100%;
 }
 .filepond--root {
   font-family: "system-ui";
