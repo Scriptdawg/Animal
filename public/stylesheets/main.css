@@ -45,7 +45,7 @@ a:hover {
   color: brown;
 }
 .normal-link {
-  padding-inline: 0;
+  padding: 0;
   text-decoration: underline;
 }
 .pre-font {
