@@ -51,3 +51,21 @@ a:hover {
 .pre-font {
   font-size: 12px;
 }
+img {
+  display: block;
+  margin-inline: auto;
+  max-width: 90vw;
+}
+.filepond--root {
+  font-family: "system-ui";
+}
+.filepond--panel-root {
+  background-color: white;
+}
+#cover .filepond--drop-label {
+  color: brown;
+  font-size: inherit;
+}
+#cover .filepond--credits {
+  display: none;
+}

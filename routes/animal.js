@@ -12,6 +12,7 @@ router.get("/about", dog_controller.about);
 // CREATE Dog - This must come before routes that display Dog (uses id)
 router.get("/dog/create", dog_controller.dog_create_get);
 router.post("/dog/create", dog_controller.dog_create_post);
+router.post("/dog/create/post", dog_controller.dog_create_post);
 // READ Dog - detail & list
 router.get("/dog/:id", dog_controller.dog_detail_get);
 router.get("/dogs", dog_controller.dog_list_get);

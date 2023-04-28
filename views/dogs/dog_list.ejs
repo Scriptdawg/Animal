@@ -4,10 +4,13 @@
   database called animals and a collection of documents called dogs.
 </p>
 
-<h2>List of dogs:</h2>
 <ul>
   <% dogs.forEach((dog) => { %>
-    <li><a href="dog/<%= dog.url %>"><%= dog.name %></a></li>
+      <a href="dog/<%= dog.url %>"><h2><%= dog.name %></h2>
+        <% if(dog.coverImagePath) { %>
+          <img width="500" height="300" src="<%= dog.coverImagePath %>" />
+          <% } %>
+        </a>
   <% }); %>
 </ul>
 

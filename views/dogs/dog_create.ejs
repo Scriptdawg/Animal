@@ -3,6 +3,10 @@
 <form method="POST" action="">
   <label for="name">Name *</label><br />
   <input type="text" id="name" name="name" placeholder="Enter a name ..." value="<%= dog.name %>" /><br /><br />
+  
+  <label for="cover">Cover</label>
+  <input id="cover" name="cover" type="file" class="filepond"/>
+  
   <label for="breed">Breed *</label><br />
   <select id="breed" name="breed">
     <% if(!dog.breed) { %>
@@ -16,11 +20,14 @@
       <% } %>
     <% }) %>
   </select><br /><br />
+
   <label for="favoriteFood">Favorite Food</label><br />
   <input type="text" id="favoriteFood" name="favoriteFood" placeholder="Enter a food ..."
     value="<%= dog.favoriteFood %>" /><br /><br />
+
   <label for="description">Description *</label><br />
   <textarea id="description" name="description"><%= dog.description %></textarea><br /><br />
+  
   <button type="submit">Submit</button>
 </form>
 

@@ -1,24 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/stylesheets/main.css" />
-    <title>
-      <%= browser.title %> <%= browser.subTitle %>: <%= browser.description %>
-    </title>
-    <script defer src="/javascripts/layout.js"></script>
-  </head>
 
-  <body>
-    <header><%- include('../partials/header.ejs') %></header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <main>
-      <%- body %>
+  <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
+  <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
+    rel="stylesheet" />
+  <link href="https://unpkg.com/filepond-plugin-image-edit/dist/filepond-plugin-image-edit.css" rel="stylesheet" />
+
+  <script defer src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+  <script defer src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
+  <script defer src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
+  <script
+    src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
+  <script
+    src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
+  <script src="https://unpkg.com/filepond-plugin-image-edit/dist/filepond-plugin-image-edit.js"></script>
+
+  <script defer src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
+
+  <script defer src="/javascripts/fileUpload.js"></script>
+
+  <script defer src="/javascripts/layout.js"></script>
+
+  <link rel="stylesheet" href="/stylesheets/main.css" />
+
+  <title>
+    <%= browser.title %>
+      <%= browser.subTitle %>: <%= browser.description %>
+  </title>
+</head>
+
+<body>
+  <header><%- include('../partials/header.ejs') %></header>
+
+  <main>
+    <%- body %>
       <p id="layout-insert-js"></p>
-    </main>
-    
-    <footer><%- include('../partials/footer.ejs') %></footer>
-  </body>
+  </main>
+
+  <footer><%- include('../partials/footer.ejs') %></footer>
+</body>
 
 </html>

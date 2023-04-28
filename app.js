@@ -7,6 +7,7 @@ if (process.env.NODE_ENV !== "production") {
 const createError = require("http-errors");
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
+const bodyParser = require("body-parser");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
@@ -32,9 +33,10 @@ app.set("layout", "layouts/layout");
 
 // Use ...
 app.use(expressLayouts);
+app.use(bodyParser.urlencoded({ limit: "11mb", extended: false }));
 app.use(logger("dev"));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ limit: "11mb", extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 

@@ -2,6 +2,7 @@ const asyncHandler = require("express-async-handler");
 const { body, validationResult } = require("express-validator");
 const Dog = require("../models/dog.js");
 const Breed = require("../models/breed.js");
+const imageMimeTypes = ["image/jpeg", "image/png", "image/gif"];
 const browser = {
   title: "Sdg",
   subTitle: "Animal",
@@ -68,6 +69,9 @@ exports.dog_create_post = [
       favoriteFood: req.body.favoriteFood,
       description: req.body.description,
     });
+
+    saveCover(dog, req.body.cover);
+    
     if (!errors.isEmpty()) {
       // There are errors. Render the form again with sanitized values/error messages.
       const allBreeds = (await Breed.find()).sort(function (a, b) {
@@ -110,6 +114,16 @@ exports.dog_create_post = [
     }
   }),
 ];
+
+// Save Cover
+function saveCover(dog, coverEncoded) {
+  if (coverEncoded == null || coverEncoded == '') return;
+  const cover = JSON.parse(coverEncoded);
+  if (cover != null && imageMimeTypes.includes(cover.type)) {
+    dog.coverImage = new Buffer.from(cover.data, "base64");
+    dog.coverImageType = cover.type;
+  }
+}
 
 // READ Dog - detail
 exports.dog_detail_get = asyncHandler(async (req, res) => {
@@ -183,6 +197,9 @@ exports.dog_update_post = [
       description: req.body.description,
       _id: req.params.id, // This is required, or a new ID will be assigned!
     });
+
+    saveCover(dog, req.body.cover);
+    
     if (!errors.isEmpty()) {
       // There are errors. Render the form again with sanitized values/error messages.
       const allBreeds = await Breed.find();
