@@ -6,9 +6,9 @@
 
 <ul>
   <% dogs.forEach((dog) => { %>
-      <a href="dog/<%= dog.url %>"><h2><%= dog.name %></h2>
+      <a style="padding:16px 0;" href="dog/<%= dog.url %>"><h2><%= dog.name %></h2>
         <% if(dog.coverImagePath) { %>
-          <img width="500" height="300" src="<%= dog.coverImagePath %>" />
+          <img width="800" height="600" src="<%= dog.coverImagePath %>" />
           <% } %>
         </a>
   <% }); %>
