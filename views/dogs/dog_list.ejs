@@ -4,14 +4,13 @@
   database called animals and a collection of documents called dogs.
 </p>
 
-<ul>
-  <% dogs.forEach((dog) => { %>
-      <a style="padding:16px 0;" href="dog/<%= dog.url %>"><h2><%= dog.name %></h2>
-        <% if(dog.coverImagePath) { %>
-          <img width="800" height="600" src="<%= dog.coverImagePath %>" />
-          <% } %>
-        </a>
-  <% }); %>
-</ul>
+<% dogs.forEach((dog)=> { %>
+<a style="padding: 16px 0" href="dog/<%= dog.url %>">
+  <h2><%= dog.name %></h2>
+  <% if(dog.coverImagePath) { %>
+  <img width="800" height="600" src="<%= dog.coverImagePath %>" alt="Database picture"/>
+  <% } %>
+</a>
+<% }); %>
 
 <p><a href="/animal/dog/create">Create New Dog</a></p>
